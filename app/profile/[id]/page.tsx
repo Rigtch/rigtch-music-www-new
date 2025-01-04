@@ -37,6 +37,7 @@ import { TotalReportViewSkeleton } from './views/total-report-view.skeleton'
 import { getUser } from '@app/api/fetchers'
 import { getServerToken } from '@app/auth'
 import { validateId } from '@app/utils/validators'
+import { ErrorBoundary } from '@app/error-boundary'
 
 export default async function ProfilePage({
   params,
@@ -128,11 +129,13 @@ export default async function ProfilePage({
         <AnalysisView {...viewProps} />
       </Suspense>
 
-      <Suspense
-        fallback={<ItemsSectionSkeleton title={'History'} withPlayedAt />}
-      >
-        <HistoryView {...viewProps} />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense
+          fallback={<ItemsSectionSkeleton title={'History'} withPlayedAt />}
+        >
+          <HistoryView {...viewProps} />
+        </Suspense>
+      </ErrorBoundary>
     </>
   )
 }
