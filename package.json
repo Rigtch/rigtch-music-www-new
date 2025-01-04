@@ -118,7 +118,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.8",
     "eslint-plugin-sonarjs": "^2.0.0",
-    "eslint-plugin-storybook": "^0.9.0",
+    "eslint-plugin-storybook": "^0.11.0",
     "eslint-plugin-testing-library": "^6.2.2",
     "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-vitest": "^0.3.26",
